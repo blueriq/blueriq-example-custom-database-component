@@ -2,7 +2,7 @@
 
 # About
 
-Since Blueriq 11.5, we added multi-tenant support and as a result we changed the way Blueriq initializes datasources.
+Since Blueriq 11.5, we changed the way Blueriq initializes datasources.
 The plugin `blueriq-example-custom-database-component` is an example on how to set up a component with the Blueriq API which has database access. No rights reserved.
 
 # Build from source
@@ -61,28 +61,6 @@ blueriq.hibernate.custom-database-component.dialect=org.hibernate.dialect.SQLSer
 - none
 - validate
 
-## Multi-tenant setup
-
-See https://my.blueriq.com/display/DOC/Multi-tenant+setup for full example.
-
-*application-externaldatasources.properties*
-
-```bash
-blueriq.datasource.custom-database-component.tenants.tenant1.url=jdbc:sqlserver://<database_url>:<port>;databaseName=<databaseName>;instance=<instanceName>
-blueriq.datasource.custom-database-component.tenants.tenant1.username=<username>
-blueriq.datasource.custom-database-component.tenants.tenant1.password=<password>
-blueriq.datasource.custom-database-component.tenants.tenant1.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
-blueriq.hibernate.custom-database-component.hbm2ddl.auto=validate
-blueriq.hibernate.custom-database-component.dialect=org.hibernate.dialect.SQLServer2012Dialect
-```
-
-*application-jndidatasources.properties*
-
-```bash
-blueriq.datasource.custom-database-component.tenants.tenant1.jndiName=java:/comp/env/jdbc/customDatabaseComponent
-blueriq.hibernate.custom-database-component.hbm2ddl.auto=validate
-blueriq.hibernate.custom-database-component.dialect=org.hibernate.dialect.SQLServer2012Dialect
-```
 
 ## Database scripts
 
